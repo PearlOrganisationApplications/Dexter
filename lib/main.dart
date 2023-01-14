@@ -196,8 +196,8 @@ class _WebViewAppState extends State<WebViewApp> {
 }
 
 _launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
+  if (await launchUrl(Uri.parse(url))) {
+    print("Hello========> $_launchURL(url)");
   } else {
     throw 'Could not launch $url';
   }
